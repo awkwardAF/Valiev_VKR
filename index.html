@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Game Scheme Editor</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="images\newLogo.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="/lib/konva.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>
+</head>
+
+<body class="body">
+  <div class="menu">
+    <div class="menu_container">
+      <div enctype="multipart/form-data" class="input_files">
+        <p class="uploadtext">Загрузить новую схему</p>
+        <p><input type="file" name="schema" id="newSchema" accept=".json">
+          <button id="openSchema">Открыть</button>
+          <button id="saveSchema">Сохранить</button>
+      </div>
+    </div>
+    <div class="shapes">
+      <div id="roomButton" class="room" title="Комната"></div>
+      <div id="objectButton" class="object" title="Объект"></div>
+      <div id="interactiveObjectButton" class="interactive_object" title="Интерактивный объект"></div>
+      <div id="npcButton" class="npc" title="NPC"></div>
+      <div id="arrowButton" class="arrow" title="Зависимость">
+        <div class="arrowdraw"></div>
+      </div>
+    </div>
+  </div>
+  <section class="modalArrow hidden" id="arrowModal">
+    <div>
+      <h3 class="titleLocation">Местоположение объекта относительно другого</h3>
+      <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle dropup" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Местоположение
+        </button>
+        <div class="dropdown-menu" id="dropdownSelect" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item qwe1" href="#">Рядом</a>
+          <a class="dropdown-item qwe2" href="#">На</a>
+          <a class="dropdown-item qwe3" href="#">Рандомная</a>
+        </div>
+      </div>
+      <!-- <div class="locationButtons" id="locationButtons">
+        <button type="button" class="btn btn-info" id="near">Рядом</button>
+        <button type="button" class="btn btn-info" id="on">На</button>
+        <button type="button" class="btn btn-info" id="under">Под</button>
+        <button type="button" class="btn btn-info" id="random">Случайно</button>
+      </div> -->
+    </div>
+  </section>
+  <!-- The Modal -->
+  <div id="settingsWindow" class="settingsWindow">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="top">
+        <span class="close" id="closeModalButton" style="padding-right: 30px;">&times;</span>
+        <h1 id="windowtitle">Объект </h1>
+      </div>
+      <div class="changeName">
+        <input id="nameField" class="form-control" type="text" placeholder="Новое название"
+          style="max-width: 300px; margin-right: 20px;">
+        <button id="changeButton" type="button" class="btn btn-success">Сохранить</button>
+      </div>
+      <button type="button" class="btn btn-danger" id="destroyButton">Удалить объект</button>
+    </div>
+
+  </div>
+  <div class="grid" style="max-width: 100%; max-height: 100%;"></div>
+  <!-- <script src="line.js"></script> -->
+  <!-- <p id="myCanvas" class="myCanvasClass"></p> -->
+  <div id="drawArea">
+    <div id="container"
+      style="background-color: #f0f0f0; max-width: 1500px; max-height: 900px; border: solid; border-color: black; border-width: 1px;"
+      ;>
+
+      <script src="app.js"></script>
+    </div>
+
+</body>
+
+</html>

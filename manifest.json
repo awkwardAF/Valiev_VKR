@@ -1,0 +1,19 @@
+{
+    "name": "Schema Editor",
+    "version": "1.0.0",
+    "description": "latest covid data of UK",
+    "manifest_version": 3,
+    "author": "Azat Valiev",
+    "type": "module",
+    "browser_action": {
+      "default_icon": "/images/icon.png",
+      "popup": "shopcmp.htm"  
+    },
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Schema Editor"
+    },
+    "background.service_worker": {
+      "scripts": ["/lib/konva.min.js"]
+    }
+}
